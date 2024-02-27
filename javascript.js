@@ -53,3 +53,5 @@ if(playerPoints > computerPoints){
 }else{
     alert("YOU LOSE!");   
 }
+
+//this has been merged
