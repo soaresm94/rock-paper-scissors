@@ -3,9 +3,9 @@ let playerPoints = 0;
 
 alert("YOU'LL BE PLAYING A 'BEST OF 3' MATCH OF ROCK, PAPER, SCISSORS AGAINST THE COMPUTER, GOOD LUCK!")
 
-function game (){
+function playGame (){
 
-    let arr = ["Rock", "Paper", "Scissors"];
+    const arr = ["Rock", "Paper", "Scissors"];
 
     function getComputerChoice(){
         return (arr[(Math.floor(Math.random() * arr.length))]);
@@ -14,42 +14,42 @@ function game (){
     let computerChoice = getComputerChoice();
     let playerChoice = prompt("Do you choose Rock, Paper or Scissors?");
 
-    if(playerChoice === computerChoice){
-    console.log("You chose " + playerChoice + ". Computer chose " + computerChoice +". You draw!");
+    if(playerChoice.toLowerCase() === computerChoice.toLowerCase()){
+    console.log("You chose " + playerChoice.toLowerCase() + ". Computer chose " + computerChoice.toLowerCase() +". You draw!");
     
-    }else if(playerChoice ==="Rock" && computerChoice === "Paper"){
-    console.log("You chose Rock. Computer chose Paper. You lose!")
+    }else if(playerChoice.toLowerCase() ==="rock" && computerChoice.toLowerCase() === "paper"){
+    console.log("You chose rock. Computer chose paper. You lose!")
     computerPoints = computerPoints+1;
 
-    }else if(playerChoice ==="Rock" && computerChoice === "Scissors"){
-    console.log("You chose Rock. Computer chose Scissors. You win!")
+    }else if(playerChoice.toLowerCase() ==="rock" && computerChoice.toLowerCase() === "scissors"){
+    console.log("You chose rock. Computer chose scissors. You win!")
     playerPoints = playerPoints+1;
     
-    }else if(playerChoice ==="Paper" && computerChoice === "Rock"){
-    console.log("You chose Paper. Computer chose Rock. You win!")
+    }else if(playerChoice.toLowerCase() ==="paper" && computerChoice.toLowerCase() === "rock"){
+    console.log("You chose paper. Computer chose rock. You win!")
     playerPoints = playerPoints+1;
     
-    }else if(playerChoice ==="Paper" && computerChoice === "Scissors"){
-    console.log("You chose Paper. Computer chose Scissorss. You lose!")
+    }else if(playerChoice.toLowerCase() ==="paper" && computerChoice.toLowerCase() === "scissors"){
+    console.log("You chose paper. Computer chose scissorss. You lose!")
     computerPoints = computerPoints+1;
     
-    }else if(playerChoice ==="Scissors" && computerChoice === "Paper"){
-        console.log("You chose Scissors. Computer chose Paper. You win!")
+    }else if(playerChoice.toLowerCase() ==="scissors" && computerChoice.toLowerCase() === "paper"){
+        console.log("You chose scissors. Computer chose paper. You win!")
         playerPoints = playerPoints+1;
             
-    }else if(playerChoice ==="Scissors" && computerChoice === "Rock"){
-        console.log("You chose Scissor. Computer chose Rock. You lose!")
+    }else if(playerChoice.toLowerCase() ==="scissors" && computerChoice.toLowerCase() === "rock"){
+        console.log("You chose scissors. Computer chose rock. You lose!")
         computerPoints = computerPoints+1;
     }
 }
 
 while((playerPoints<2)&&(computerPoints<2)){
-    game();
+    playGame();
     console.log("Player points is: " + playerPoints + ". Computer points is: " + computerPoints + ".");
 }
 
 if(playerPoints > computerPoints){
-    console.log("CONGRATULATIONS! YOU WIN!!!");
+   alert("CONGRATULATIONS! YOU WIN!!!");
 }else{
-    console.log("YOU LOSE!");   
+    alert("YOU LOSE!");   
 }
